@@ -10,6 +10,6 @@ COPY home.html .
 RUN go build -o bin .
 
 ENTRYPOINT [ "/app/bin" ]
-LABEL maintainer="your-email@example.com"
+LABEL maintainer="mostafa.elhadroubi.dev@gmail.com"
 LABEL version="1.0"
 LABEL description="A Go web server for ASCII art"
