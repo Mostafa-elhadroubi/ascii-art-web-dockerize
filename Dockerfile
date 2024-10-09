@@ -13,3 +13,4 @@ ENTRYPOINT [ "/app/bin" ]
 LABEL maintainer="mostafa.elhadroubi.dev@gmail.com"
 LABEL version="1.0"
 LABEL description="A Go web server for ASCII art"
+

@@ -45,20 +45,19 @@ func processHandler(w http.ResponseWriter, r *http.Request) {
 
 
 
-func ageHandler(w http.ResponseWriter, r *http.Request) {
-	a := Test{Name: "Mostafa", Age: 27}
+func homePage(w http.ResponseWriter, r *http.Request) {
+	// a := Test{Name: "Mostafa", Age: 27}
 	t, err := template.ParseFiles("home.html")
 	if err != nil {
 		fmt.Println(err)
 		http.Error(w, err.Error()/*convert the error into string*/, http.StatusInternalServerError)
 	}
-	t.Execute(w, a)
+	t.Execute(w, nil)
 }
 
 
 func main() {
-	// http.HandleFunc("/", indexHandler)
-	http.HandleFunc("/", ageHandler)
+	http.HandleFunc("/", homePage)
 	http.HandleFunc("/process", processHandler)
 	http.ListenAndServe(":8080", nil)
 }

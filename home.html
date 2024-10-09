@@ -21,19 +21,11 @@
         </div>
     </form>
 
-    <h2 class="a">Result:</h2>
-    <div class="result">
-        <pre>{{.Res}}</pre>
-    </div>
-
-    <script>
-        const textarea = document.querySelector('#textarea');
-        const result = document.querySelector('.result')
-        const a = document.querySelector('.a')
-        a.addEventListener('click', () => {
-
-            result.innerHTML = textarea.value
-        })
-    </script>
+    {{if .Res}}
+        <h2 class="a">Result:</h2>
+        <div class="result">
+            <pre>{{.Res}}</pre>
+        </div>
+    {{end}}
 </body>
 </html>
